@@ -170,7 +170,7 @@ static irqreturn_t msm_ts_irq(int irq, void *dev_id)
 	return IRQ_HANDLED;
 }
 
-static void dump_tssc_regs(struct msm_ts *ts)
+static void __maybe_unused dump_tssc_regs(struct msm_ts *ts) 
 {
 #define __dump_tssc_reg(r) \
 		do { printk(#r " %x\n", tssc_readl(ts, (r))); } while(0)
